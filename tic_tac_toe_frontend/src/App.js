@@ -8,8 +8,12 @@ import "./App.css";
  * Backend API endpoints: POST /games, GET /games/{id}, POST /games/{id}/move, GET /leaderboard
  */
 
-// Backend API root URL (change if backend runs elsewhere)
-const API_BASE = process.env.REACT_APP_API_BASE || "https://vscode-internal-246-beta.beta01.cloud.kavia.ai:3001";
+/**
+ * PUBLIC_INTERFACE
+ * API_BASE is always sourced from the .env file, so deployment can control backend URL.
+ * See .env for REACT_APP_API_BASE.
+ */
+const API_BASE = process.env.REACT_APP_API_BASE;
 
 // Helper to fetch leaderboard
 async function fetchLeaderboard() {
